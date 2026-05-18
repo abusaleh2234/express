@@ -5,9 +5,11 @@ import { userRoute } from "./module/user/user.router"
 import { profileRouter } from "./module/profile/profile.router"
 import { authRouter } from "./module/auth/auth.router"
 const app: Application = express()
+import fs from "fs"
+import logger from "./middlewere/logger"
 
 app.use(express.json())
-
+app.use(logger)
 
 app.get('/', (req: Request, res: Response) => {
     //   res.send('Hello World!.........')
