@@ -7,7 +7,9 @@ import { authRouter } from "./module/auth/auth.router"
 const app: Application = express()
 import fs from "fs"
 import logger from "./middlewere/logger"
+import cookieParser from 'cookie-parser'
 
+app.use(cookieParser())
 app.use(express.json())
 app.use(logger)
 
